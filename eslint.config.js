@@ -39,8 +39,6 @@ export default [
       ],
     },
   },
-  'plugin:prettier/recommended',
-  'prettier/prettier',
   eslintConfigPrettier,
   pluginJs.configs.recommended,
   pluginReact.configs.flat.recommended,
