@@ -9,9 +9,9 @@ import eslintConfigPrettier from 'eslint-config-prettier';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
-  { ignores: ['dist, node_modules'] },
   {
-    files: ['**/*.{js,jsx}'],
+    ignores: ['dist', 'node_modules'],
+    files: ['/*.{js,jsx}'],
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
@@ -22,11 +22,8 @@ export default [
       },
     },
     settings: { react: { version: '18.3' } },
-    plugins: {
-      react,
-      'react-hooks': reactHooks,
-      'react-refresh': reactRefresh,
-    },
+    plugins: ['react', 'react-hooks', 'react-refresh', 'prettier'],
+    extends: ['prettier'],
     rules: {
       ...js.configs.recommended.rules,
       ...react.configs.recommended.rules,
@@ -37,10 +34,7 @@ export default [
         'warn',
         { allowConstantExport: true },
       ],
-      'react/no-unknown-property': ['error', { ignore: ['css'] }],
+      'prettier/prettier': 'error',
     },
   },
-  eslintConfigPrettier,
-  pluginJs.configs.recommended,
-  pluginReact.configs.flat.recommended,
 ];
