@@ -4,11 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "start": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "prettier": "prettier . --write",
+    "format": "prettier . --write",
     "preview": "vite preview",
     "prepare": "husky"
   },
